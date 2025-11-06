@@ -1,0 +1,38 @@
+<svg width="1920" height="1124" viewBox="0 0 1920 1124" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.53">
+<mask id="mask0_22373_18746" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1124">
+<rect width="1920" height="1124" fill="url(#paint0_radial_22373_18746)"/>
+</mask>
+<g mask="url(#mask0_22373_18746)">
+<line x1="3000" y1="156" y2="156" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="3000" y1="349" y2="349" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="3000" y1="542" y2="542" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="3000" y1="735" y2="735" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="3000" y1="928" y2="928" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="3000" y1="1123" y2="1123" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="161" y1="-4.37114e-08" x2="161" y2="1190" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="361" y1="-4.37114e-08" x2="361" y2="1190" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="561" y1="-4.37114e-08" x2="561" y2="1190" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="761" y1="-4.37114e-08" x2="761" y2="1190" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="961" y1="-4.37114e-08" x2="961" y2="1190" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="1161" y1="-4.37114e-08" x2="1161" y2="1190" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="1361" y1="-4.37114e-08" x2="1361" y2="1190" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="1561" y1="-4.37114e-08" x2="1561" y2="1190" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="1761" y1="-4.37114e-08" x2="1761" y2="1190" stroke="#66BCC7" stroke-opacity="0.3" stroke-width="2"/>
+<rect x="161" y="725" width="14.1417" height="14.1417" transform="rotate(45 161 725)" fill="#66BCC7" fill-opacity="0.4"/>
+<rect x="1761" y="725" width="14.1417" height="14.1417" transform="rotate(45 1761 725)" fill="#66BCC7" fill-opacity="0.4"/>
+<rect x="161" y="339" width="14.1417" height="14.1417" transform="rotate(45 161 339)" fill="#66BCC7" fill-opacity="0.4"/>
+<rect x="1761" y="339" width="14.1417" height="14.1417" transform="rotate(45 1761 339)" fill="#66BCC7" fill-opacity="0.4"/>
+<rect x="360" y="532" width="14.1417" height="14.1417" transform="rotate(45 360 532)" fill="#66BCC7" fill-opacity="0.4"/>
+<rect x="1561" y="532" width="14.1417" height="14.1417" transform="rotate(45 1561 532)" fill="#66BCC7" fill-opacity="0.4"/>
+<rect x="561" y="146" width="14.1417" height="14.1417" transform="rotate(45 561 146)" fill="#66BCC7" fill-opacity="0.4"/>
+<rect x="1361" y="146" width="14.1417" height="14.1417" transform="rotate(45 1361 146)" fill="#66BCC7" fill-opacity="0.4"/>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_22373_18746" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 553) rotate(-90) scale(707 1207.69)">
+<stop stop-color="#737373" stop-opacity="0.54"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
