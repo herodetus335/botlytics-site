@@ -606,6 +606,19 @@ a[href*="#about-us"] {
   /* On use case pages, ensure backdrop is below navigation menu */
   body:has(#use-case-description) .mobile-nav-backdrop {
     z-index: 9999 !important;
+    /* Backdrop should not block clicks on navigation menu */
+    pointer-events: auto !important;
+  }
+  
+  /* Ensure navigation menu can receive clicks even when backdrop is active */
+  body:has(#use-case-description) .w-nav-menu {
+    pointer-events: auto !important;
+    z-index: 10004 !important;
+  }
+  
+  /* Ensure all navigation menu children can receive clicks */
+  body:has(#use-case-description) .w-nav-menu * {
+    pointer-events: auto !important;
   }
   
   .nav-dropdown-flex {

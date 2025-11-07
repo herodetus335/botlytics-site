@@ -32,10 +32,22 @@
     document.body.appendChild(backdrop);
     
     backdrop.addEventListener('click', function(e) {
-      // Don't close if clicking on navigation menu
+      // Don't close if clicking on navigation menu or its children
       const navMenu = document.querySelector('.w-nav-menu');
-      if (navMenu && navMenu.contains(e.target)) {
-        return;
+      if (navMenu) {
+        // Check if click target is within navigation menu
+        if (navMenu.contains(e.target) || navMenu === e.target) {
+          e.stopPropagation();
+          return;
+        }
+        // Also check if click is on navigation links
+        const navLinks = navMenu.querySelectorAll('a, .nav-menu-link-copy, .nav-dropdown-link-block');
+        for (let i = 0; i < navLinks.length; i++) {
+          if (navLinks[i].contains(e.target) || navLinks[i] === e.target) {
+            e.stopPropagation();
+            return;
+          }
+        }
       }
       if (menuOpen) {
         closeMenu();
@@ -64,13 +76,7 @@
     if (isUseCasePage) {
       // On use case pages, backdrop should be below navigation menu
       backdrop.style.zIndex = '9999';
-    }
-    
-    backdrop.style.pointerEvents = 'auto';
-    backdrop.style.opacity = '1';
-    
-    // Ensure navigation menu is above backdrop on use case pages
-    if (isUseCasePage) {
+      // Ensure navigation menu is above backdrop
       navMenu.style.zIndex = '10004';
       navMenu.style.pointerEvents = 'auto';
       // Ensure proper positioning - same as home page
@@ -80,7 +86,14 @@
       navMenu.style.right = '0';
       navMenu.style.width = '100%';
       navMenu.style.maxWidth = '100%';
+      // Make sure backdrop doesn't block clicks on navigation menu
+      // The backdrop will still close menu when clicking outside, but won't block menu clicks
+    } else {
+      backdrop.style.zIndex = '998';
     }
+    
+    backdrop.style.pointerEvents = 'auto';
+    backdrop.style.opacity = '1';
     
     // Re-setup dropdown when menu opens (in case elements weren't found before)
     setTimeout(function() {
