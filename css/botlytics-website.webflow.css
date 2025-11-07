@@ -2630,6 +2630,15 @@ figure {
   padding-bottom: 100px;
 }
 
+/* Style step headers with blue color matching home page */
+#use-case-description h3 strong em,
+#use-case-description h3 strong,
+#use-case-description h3 em,
+#use-case-description h3:has(strong em),
+#use-case-description h3:has(strong) {
+  color: var(--color--primary-color) !important;
+}
+
 .case-studies-details-info-wrap {
   grid-column-gap: 0px;
   grid-row-gap: 0px;

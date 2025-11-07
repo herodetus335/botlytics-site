@@ -1440,22 +1440,33 @@ a[href*="#about-us"] {
     flex: 1 !important;
     color: #ffffff !important;
     font-size: 12px !important;
-    line-height: 1.4 !important;
+    line-height: 1.3 !important;
     padding: 0 !important;
     margin: 0 !important;
   }
   
+  /* Remove space after strong tags */
+  .mobile-step-content strong + br {
+    display: none !important;
+  }
+  
+  /* Make text immediately follow strong tag */
   .mobile-step-content strong {
     color: #ffffff !important;
     font-weight: 600 !important;
     display: block !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
     font-size: 12px !important;
   }
   
   .mobile-step-content br {
     display: block !important;
-    margin: 2px 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    height: 0 !important;
+    content: "" !important;
   }
   
   /* Clean divider line to replace hyphen lines */
@@ -1735,9 +1746,36 @@ a[href*="#about-us"] {
     padding: 20px;
   }
   
+  /* Reduce spacing between hero image and content section */
+  .cms-details-hero-section {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    z-index: 1 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .cms-details-hero-image-block {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .case-study-details-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  .cms-details-section-gap {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  
   .case-studies-details-projct-overview {
     font-size: 16px !important;
     line-height: 1.6 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
   
   .case-studies-details-projct-overview img {
@@ -1745,12 +1783,13 @@ a[href*="#about-us"] {
     height: auto !important;
   }
   
-  /* Restore gradient overlay on mobile for use case detail pages */
-  .cms-details-hero-section {
-    overflow: hidden !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    z-index: 1 !important;
+  /* Style step headers with blue color matching home page on mobile */
+  #use-case-description h3 strong em,
+  #use-case-description h3 strong,
+  #use-case-description h3 em,
+  #use-case-description h3:has(strong em),
+  #use-case-description h3:has(strong) {
+    color: #064dfa !important;
   }
   
   .cms-details-hero-image-block {
