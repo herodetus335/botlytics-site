@@ -11,6 +11,11 @@
     
     backdrop = document.createElement('div');
     backdrop.className = 'mobile-nav-backdrop';
+    
+    // Check if we're on a use case page
+    const isUseCasePage = document.getElementById('use-case-description') !== null;
+    const backdropZIndex = isUseCasePage ? '9999' : '998';
+    
     backdrop.style.cssText = `
       position: fixed;
       top: 0;
@@ -18,7 +23,7 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.3);
-      z-index: 998;
+      z-index: ${backdropZIndex};
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -26,7 +31,12 @@
     // Remove backdrop-filter blur - we only want the menu itself to blur
     document.body.appendChild(backdrop);
     
-    backdrop.addEventListener('click', function() {
+    backdrop.addEventListener('click', function(e) {
+      // Don't close if clicking on navigation menu
+      const navMenu = document.querySelector('.w-nav-menu');
+      if (navMenu && navMenu.contains(e.target)) {
+        return;
+      }
       if (menuOpen) {
         closeMenu();
       }
@@ -48,8 +58,29 @@
     
     // Show backdrop
     const backdrop = createBackdrop();
+    
+    // Check if we're on a use case page
+    const isUseCasePage = document.getElementById('use-case-description') !== null;
+    if (isUseCasePage) {
+      // On use case pages, backdrop should be below navigation menu
+      backdrop.style.zIndex = '9999';
+    }
+    
     backdrop.style.pointerEvents = 'auto';
     backdrop.style.opacity = '1';
+    
+    // Ensure navigation menu is above backdrop on use case pages
+    if (isUseCasePage) {
+      navMenu.style.zIndex = '10004';
+      navMenu.style.pointerEvents = 'auto';
+      // Ensure proper positioning - same as home page
+      navMenu.style.position = 'fixed';
+      navMenu.style.top = '43px';
+      navMenu.style.left = '0';
+      navMenu.style.right = '0';
+      navMenu.style.width = '100%';
+      navMenu.style.maxWidth = '100%';
+    }
     
     // Re-setup dropdown when menu opens (in case elements weren't found before)
     setTimeout(function() {
