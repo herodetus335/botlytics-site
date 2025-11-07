@@ -96,10 +96,14 @@
       backdrop.style.zIndex = '9999';
       // CRITICAL: Backdrop should NOT block clicks on navigation menu
       backdrop.style.pointerEvents = 'none';
+      // CRITICAL: Make backdrop not visually cover navigation menu - reduce opacity or use clip-path
+      // The backdrop will still darken the background but won't dim the menu
+      backdrop.style.opacity = '0.2'; // Lower opacity so it doesn't dim the menu as much
       // Ensure navigation menu is above backdrop
       navMenu.style.zIndex = '10005';
       navMenu.style.pointerEvents = 'auto';
       navMenu.style.touchAction = 'manipulation';
+      navMenu.style.opacity = '1'; // Ensure menu is fully opaque
       // Ensure proper positioning - same as home page
       navMenu.style.position = 'fixed';
       navMenu.style.top = '43px';
@@ -107,14 +111,23 @@
       navMenu.style.right = '0';
       navMenu.style.width = '100%';
       navMenu.style.maxWidth = '100%';
-      // Make sure all navigation links are clickable
-      const navLinks = navMenu.querySelectorAll('a, .nav-menu-link-copy, .nav-dropdown-link-block, .nav-dropdown-toggle-copy');
+      // Make sure all navigation links are clickable and not dimmed
+      const navLinks = navMenu.querySelectorAll('a, .nav-menu-link-copy, .nav-dropdown-link-block, .nav-dropdown-toggle-copy, *');
       navLinks.forEach(function(link) {
         link.style.pointerEvents = 'auto';
         link.style.touchAction = 'manipulation';
         link.style.zIndex = '10006';
         link.style.position = 'relative';
+        link.style.opacity = '1';
+        link.style.filter = 'none';
       });
+      
+      // Ensure logo is not dimmed
+      const logo = navMenu.querySelector('.navbar-brand, .brand-logo, img');
+      if (logo) {
+        logo.style.opacity = '1';
+        logo.style.filter = 'none';
+      }
       
       // Add document click handler to close menu when clicking outside (since backdrop has pointer-events: none)
       const documentClickHandler = function(e) {
@@ -129,12 +142,13 @@
     } else {
       backdrop.style.zIndex = '998';
       backdrop.style.pointerEvents = 'auto';
+      backdrop.style.opacity = '1';
     }
     
     if (!isUseCasePage) {
       backdrop.style.pointerEvents = 'auto';
+      backdrop.style.opacity = '1';
     }
-    backdrop.style.opacity = '1';
     
     // Re-setup dropdown when menu opens (in case elements weren't found before)
     setTimeout(function() {

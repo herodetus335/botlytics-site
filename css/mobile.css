@@ -608,6 +608,8 @@ a[href*="#about-us"] {
     z-index: 9999 !important;
     /* Backdrop should NOT block clicks on navigation menu - let clicks pass through to menu */
     pointer-events: none !important;
+    /* Lower opacity so backdrop doesn't dim the menu as much */
+    opacity: 0.2 !important;
   }
   
   /* Ensure navigation menu is above backdrop and not dimmed */
@@ -629,10 +631,21 @@ a[href*="#about-us"] {
   body:has(#use-case-description) .w-nav-menu .nav-menu-link-copy,
   body:has(#use-case-description) .w-nav-menu .nav-dropdown-toggle-copy,
   body:has(#use-case-description) .w-nav-menu .nav-dropdown-link-text,
-  body:has(#use-case-description) .w-nav-menu .nav-dropdown-link-block {
+  body:has(#use-case-description) .w-nav-menu .nav-dropdown-link-block,
+  body:has(#use-case-description) .w-nav-menu * {
     opacity: 1 !important;
     color: #ffffff !important;
     text-shadow: none !important;
+  }
+  
+  /* Ensure logo is not dimmed */
+  body:has(#use-case-description) .w-nav-menu .navbar-brand,
+  body:has(#use-case-description) .w-nav-menu .navbar-brand img,
+  body:has(#use-case-description) .w-nav-menu .brand-logo,
+  body:has(#use-case-description) .w-nav-menu img {
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
   }
   
   .nav-dropdown-flex {
@@ -1593,16 +1606,31 @@ a[href*="#about-us"] {
     z-index: 10003 !important;
   }
   
-  /* Ensure navigation links are white and clickable on use case pages */
+  /* Ensure navigation links are white and clickable on use case pages - NOT DIMMED */
   body:has(#use-case-description) .nav-menu-link-copy,
   body:has(#use-case-description) .nav-dropdown-toggle-copy,
   body:has(#use-case-description) .nav-dropdown-link-text,
-  body:has(#use-case-description) .nav-dropdown-link-block {
+  body:has(#use-case-description) .nav-dropdown-link-block,
+  body:has(#use-case-description) .w-nav-menu a,
+  body:has(#use-case-description) .w-nav-menu * {
     color: #ffffff !important;
     pointer-events: auto !important;
     cursor: pointer !important;
     opacity: 1 !important;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1) !important;
+    /* CRITICAL: Ensure text is not dimmed */
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+  
+  /* Ensure logo is bright and not dimmed */
+  body:has(#use-case-description) .w-nav-menu .navbar-brand,
+  body:has(#use-case-description) .w-nav-menu .navbar-brand img,
+  body:has(#use-case-description) .w-nav-menu .brand-logo {
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    brightness: 1 !important;
   }
   
   body:has(#use-case-description) .nav-menu-link-copy:hover,
@@ -1634,6 +1662,8 @@ a[href*="#about-us"] {
     backdrop-filter: blur(100px) saturate(180%) !important;
     /* CRITICAL: Ensure menu is clickable */
     touch-action: manipulation !important;
+    /* CRITICAL: Ensure menu is not dimmed - full opacity */
+    opacity: 1 !important;
   }
   
   body:has(#use-case-description) .w-nav-menu.menu-is-open,
