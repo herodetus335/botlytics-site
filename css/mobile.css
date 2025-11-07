@@ -73,9 +73,21 @@ a[href*="#about-us"] {
 
 /* Service Cards - Horizontal Scroll on Mobile */
 @media (max-width: 991px) {
-  /* Ensure parent containers allow horizontal scrolling */
+  /* Ensure body and html allow horizontal scrolling on home page */
+  body:not(:has(#use-case-description)),
+  body:not(:has(#use-case-description)) html {
+    overflow-x: visible !important;
+  }
+  
+  /* Ensure ALL parent containers allow horizontal scrolling */
+  .page-wrapper,
+  .main-wrapper,
+  .service-section,
+  .case-study-section,
   .service-wrap,
-  .case-study-list-wrapper {
+  .case-study-list-wrapper,
+  .w-container,
+  .container {
     overflow-x: visible !important;
     overflow-y: visible !important;
   }
@@ -90,7 +102,10 @@ a[href*="#about-us"] {
     padding: 10px 0;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    min-width: 0 !important;
   }
   
   .service-collection-grid::-webkit-scrollbar {
@@ -113,9 +128,13 @@ a[href*="#about-us"] {
 
 /* Case Study Cards - Horizontal Scroll on Mobile */
 @media (max-width: 991px) {
-  /* Ensure parent containers allow horizontal scrolling */
+  /* Ensure ALL parent containers allow horizontal scrolling */
+  .page-wrapper,
+  .main-wrapper,
   .case-study-section,
-  .case-study-list-wrapper {
+  .case-study-list-wrapper,
+  .w-container,
+  .container {
     overflow-x: visible !important;
     overflow-y: visible !important;
   }
@@ -131,7 +150,10 @@ a[href*="#about-us"] {
     padding: 10px 15px;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    min-width: 0 !important;
   }
   
   .case-study-collection-list::-webkit-scrollbar {
