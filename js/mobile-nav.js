@@ -27,6 +27,8 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
+      /* Ensure backdrop doesn't visually cover navigation menu */
+      mix-blend-mode: normal;
     `;
     // Remove backdrop-filter blur - we only want the menu itself to blur
     document.body.appendChild(backdrop);
@@ -38,16 +40,32 @@
         // Check if click target is within navigation menu
         if (navMenu.contains(e.target) || navMenu === e.target) {
           e.stopPropagation();
-          return;
+          e.preventDefault();
+          return false;
         }
         // Also check if click is on navigation links
-        const navLinks = navMenu.querySelectorAll('a, .nav-menu-link-copy, .nav-dropdown-link-block');
+        const navLinks = navMenu.querySelectorAll('a, .nav-menu-link-copy, .nav-dropdown-link-block, .nav-dropdown-toggle-copy');
         for (let i = 0; i < navLinks.length; i++) {
           if (navLinks[i].contains(e.target) || navLinks[i] === e.target) {
             e.stopPropagation();
-            return;
+            e.preventDefault();
+            return false;
           }
         }
+      }
+      // Only close if clicking outside the navigation menu
+      if (menuOpen) {
+        closeMenu();
+      }
+    });
+    
+    // Also add touch event handler for mobile
+    backdrop.addEventListener('touchend', function(e) {
+      const navMenu = document.querySelector('.w-nav-menu');
+      if (navMenu && navMenu.contains(e.target)) {
+        e.stopPropagation();
+        e.preventDefault();
+        return false;
       }
       if (menuOpen) {
         closeMenu();
@@ -76,9 +94,12 @@
     if (isUseCasePage) {
       // On use case pages, backdrop should be below navigation menu
       backdrop.style.zIndex = '9999';
+      // CRITICAL: Backdrop should NOT block clicks on navigation menu
+      backdrop.style.pointerEvents = 'none';
       // Ensure navigation menu is above backdrop
-      navMenu.style.zIndex = '10004';
+      navMenu.style.zIndex = '10005';
       navMenu.style.pointerEvents = 'auto';
+      navMenu.style.touchAction = 'manipulation';
       // Ensure proper positioning - same as home page
       navMenu.style.position = 'fixed';
       navMenu.style.top = '43px';
@@ -86,13 +107,33 @@
       navMenu.style.right = '0';
       navMenu.style.width = '100%';
       navMenu.style.maxWidth = '100%';
-      // Make sure backdrop doesn't block clicks on navigation menu
-      // The backdrop will still close menu when clicking outside, but won't block menu clicks
+      // Make sure all navigation links are clickable
+      const navLinks = navMenu.querySelectorAll('a, .nav-menu-link-copy, .nav-dropdown-link-block, .nav-dropdown-toggle-copy');
+      navLinks.forEach(function(link) {
+        link.style.pointerEvents = 'auto';
+        link.style.touchAction = 'manipulation';
+        link.style.zIndex = '10006';
+        link.style.position = 'relative';
+      });
+      
+      // Add document click handler to close menu when clicking outside (since backdrop has pointer-events: none)
+      const documentClickHandler = function(e) {
+        if (menuOpen && navMenu && !navMenu.contains(e.target) && !navContainer.contains(e.target)) {
+          closeMenu();
+          document.removeEventListener('click', documentClickHandler);
+          document.removeEventListener('touchend', documentClickHandler);
+        }
+      };
+      document.addEventListener('click', documentClickHandler);
+      document.addEventListener('touchend', documentClickHandler);
     } else {
       backdrop.style.zIndex = '998';
+      backdrop.style.pointerEvents = 'auto';
     }
     
-    backdrop.style.pointerEvents = 'auto';
+    if (!isUseCasePage) {
+      backdrop.style.pointerEvents = 'auto';
+    }
     backdrop.style.opacity = '1';
     
     // Re-setup dropdown when menu opens (in case elements weren't found before)
@@ -492,3 +533,4 @@
   setTimeout(initInstantScroll, 100);
   setTimeout(initInstantScroll, 500);
 })();
+
