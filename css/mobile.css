@@ -73,16 +73,24 @@ a[href*="#about-us"] {
 
 /* Service Cards - Horizontal Scroll on Mobile */
 @media (max-width: 991px) {
+  /* Ensure parent containers allow horizontal scrolling */
+  .service-wrap,
+  .case-study-list-wrapper {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+  
   .service-collection-grid {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
+    display: flex !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
     gap: 20px;
     padding: 10px 0;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
+    width: 100%;
   }
   
   .service-collection-grid::-webkit-scrollbar {
@@ -90,10 +98,12 @@ a[href*="#about-us"] {
   }
   
   .service-collection-item {
-    flex: 0 0 85%;
-    max-width: 85%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+    min-width: 85% !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
+    flex-shrink: 0 !important;
   }
   
   .service-card-block {
@@ -103,6 +113,13 @@ a[href*="#about-us"] {
 
 /* Case Study Cards - Horizontal Scroll on Mobile */
 @media (max-width: 991px) {
+  /* Ensure parent containers allow horizontal scrolling */
+  .case-study-section,
+  .case-study-list-wrapper {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+  
   .case-study-collection-list {
     display: flex !important;
     flex-direction: row !important;
@@ -692,9 +709,12 @@ a[href*="#about-us"] {
   .home-hero-title {
     font-size: 36px !important;
     line-height: 1.2 !important;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    word-break: normal !important;
     margin: 0 0 20px 0 !important;
     padding: 0 !important;
   }
@@ -750,11 +770,24 @@ a[href*="#about-us"] {
     overflow-wrap: break-word;
   }
   
-  /* Fix text overflow */
+  /* Fix text overflow - prevent unwanted hyphenation */
   p, h1, h2, h3, h4, h5, h6 {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    word-break: normal !important;
+  }
+  
+  /* Apply to all text elements */
+  body, div, span, a, li, td, th {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    word-break: normal !important;
   }
   
   /* Larger text for better mobile readability */
@@ -1357,6 +1390,17 @@ a[href*="#about-us"] {
     display: block !important;
     margin: 2px 0 !important;
   }
+  
+  /* Clean divider line to replace hyphen lines */
+  .divider-line,
+  .mobile-divider-line {
+    width: 100% !important;
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    margin: 32px 0 !important;
+    border: none !important;
+    padding: 0 !important;
+  }
 }
 
 /* Image Lightbox Styles */
@@ -1473,6 +1517,21 @@ a[href*="#about-us"] {
 
 /* Mobile Use Case Detail Page */
 @media (max-width: 767px) {
+  /* Prevent horizontal scrolling on use case detail pages only */
+  /* Only apply when use case description element exists */
+  body:has(#use-case-description) {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  body:has(#use-case-description) .page-wrapper,
+  body:has(#use-case-description) .main-wrapper {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
   .cms-details-hero-title {
     font-size: 28px !important;
     padding: 20px;
@@ -1486,6 +1545,33 @@ a[href*="#about-us"] {
   .case-studies-details-projct-overview img {
     max-width: 100% !important;
     height: auto !important;
+  }
+  
+  /* Restore gradient overlay on mobile for use case detail pages */
+  .cms-details-hero-section {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .cms-details-hero-image-block {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .div-block-3 {
+    display: block !important;
+    z-index: 2 !important;
+    background-color: var(--color--transparent) !important;
+    background-image: linear-gradient(#0000, #0d0d12 91% 100%, #000) !important;
+    background-clip: border-box !important;
+    position: absolute !important;
+    inset: 0% !important;
+    -webkit-transform: translate3d(0, 0, 0) scale3d(1.2, 1.2, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0) !important;
+    -moz-transform: translate3d(0, 0, 0) scale3d(1.2, 1.2, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0) !important;
+    -ms-transform: translate3d(0, 0, 0) scale3d(1.2, 1.2, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0) !important;
+    transform: translate3d(0, 0, 0) scale3d(1.2, 1.2, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0) !important;
   }
 }
 
@@ -1515,15 +1601,16 @@ a[href*="#about-us"] {
     box-sizing: border-box;
   }
   
-  /* Ensure text doesn't get cut off */
+  /* Ensure text doesn't get cut off - but don't hyphenate */
   .home-hero-except,
   .home-hero-except-copy,
   p {
-    word-break: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    word-wrap: break-word !important;
   }
   
   /* Fix section spacing */

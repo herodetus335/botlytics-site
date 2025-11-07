@@ -2,18 +2,68 @@
 (function() {
     'use strict';
     
+    // Check if we're on a use case detail page
+    function isUseCaseDetailPage() {
+        return window.location.pathname.includes('detail_use-case.html') || 
+               document.getElementById('use-case-description') !== null;
+    }
+    
     // Setup image lightbox for all images on the page
     function setupImageLightbox() {
-        // Find all images on the page (excluding icons, logos, and other decorative images)
-        const images = document.querySelectorAll('img:not(.brand-logo):not(.footer-image):not(.w-icon-):not([class*="icon"]):not([class*="logo"])');
+        // Check if we're on a use case detail page
+        const isUseCasePage = isUseCaseDetailPage();
+        
+        // Only enable lightbox on use case detail pages
+        if (!isUseCasePage) {
+            return;
+        }
+        
+        // Find all images in the use case description/content area
+        // Exclude hero image, icons, logos, and decorative images
+        const descriptionElement = document.getElementById('use-case-description');
+        let images;
+        
+        if (descriptionElement) {
+            // Get all images within the description/content area (including inside figure elements)
+            images = descriptionElement.querySelectorAll('img');
+        } else {
+            // Fallback: get all images except hero and decorative ones
+            images = document.querySelectorAll('img:not(.brand-logo):not(.footer-image):not(.w-icon-):not([class*="icon"]):not([class*="logo"]):not(.case-study-thumbnail):not(#use-case-hero-image):not(.cms-details-hero-image)');
+        }
         
         images.forEach(img => {
             // Skip if already has lightbox handler
             if (img.hasAttribute('data-lightbox-setup')) return;
-            img.setAttribute('data-lightbox-setup', 'true');
             
-            // Skip very small images (likely icons)
-            if (img.width < 50 && img.height < 50) return;
+            // Skip hero image specifically
+            if (img.id === 'use-case-hero-image' || img.classList.contains('cms-details-hero-image')) {
+                return;
+            }
+            
+            // Allow images in figure elements (they should be clickable)
+            const parentFigure = img.closest('figure');
+            if (parentFigure) {
+                // Images in figure elements should always be clickable, even if inside a link
+                // Continue to setup lightbox
+            } else {
+                // For images not in figure elements, skip if they're in navigation links
+                const parentLink = img.closest('a');
+                if (parentLink) {
+                    // Only skip if it's a navigation link
+                    if (parentLink.href.includes('detail_use-case.html') || 
+                        parentLink.classList.contains('case-study-thumbnail-link') ||
+                        parentLink.href.includes('index.html')) {
+                        return;
+                    }
+                }
+            }
+            
+            // Skip very small images (likely icons) - check both width/height and naturalWidth/naturalHeight
+            const imgWidth = img.naturalWidth || img.width || 0;
+            const imgHeight = img.naturalHeight || img.height || 0;
+            if (imgWidth < 50 && imgHeight < 50) return;
+            
+            img.setAttribute('data-lightbox-setup', 'true');
             
             // Make image clickable
             img.style.cursor = 'pointer';
@@ -22,10 +72,23 @@
             img.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                openImageLightbox(img.src, img.alt || 'Image');
+                // Get the full-size image source (try srcset first, then src)
+                let imageSrc = img.src;
+                if (img.srcset) {
+                    // Get the largest image from srcset
+                    const srcsetParts = img.srcset.split(',').map(s => s.trim());
+                    if (srcsetParts.length > 0) {
+                        const largest = srcsetParts[srcsetParts.length - 1].split(' ')[0];
+                        imageSrc = largest;
+                    }
+                }
+                openImageLightbox(imageSrc, img.alt || 'Image');
             });
         });
     }
+    
+    // Make setupImageLightbox available globally so usecase-detail.js can call it
+    window.setupImageLightbox = setupImageLightbox;
     
     // Open image lightbox
     function openImageLightbox(imageSrc, imageAlt) {

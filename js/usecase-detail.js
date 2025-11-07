@@ -125,6 +125,9 @@ function populateUseCaseDetail(useCase) {
     if (descriptionElement && useCase['Description 1']) {
         descriptionElement.innerHTML = useCase['Description 1'];
         
+        // Replace hyphen lines with clean line elements (works on all screen sizes)
+        replaceHyphenLines(descriptionElement);
+        
         // Transform content for all use cases on mobile
         if (window.innerWidth <= 767) {
             transformUseCaseForMobile(descriptionElement);
@@ -132,6 +135,14 @@ function populateUseCaseDetail(useCase) {
         
         // Store use case slug for resize handler
         descriptionElement.setAttribute('data-use-case-slug', useCase.Slug);
+        
+        // Setup lightbox for images after content is loaded
+        // Use setTimeout to ensure DOM is fully updated
+        setTimeout(function() {
+            if (typeof setupImageLightbox === 'function') {
+                setupImageLightbox();
+            }
+        }, 100);
     }
 }
 
@@ -149,14 +160,36 @@ window.addEventListener('resize', function() {
                     const useCase = useCases.find(uc => uc.Slug === slug);
                     if (useCase && useCase['Description 1']) {
                         descriptionElement.innerHTML = useCase['Description 1'];
+                        // Replace hyphen lines with clean line elements (works on all screen sizes)
+                        replaceHyphenLines(descriptionElement);
                         if (window.innerWidth <= 767) {
                             transformUseCaseForMobile(descriptionElement);
                         }
+                        // Setup lightbox for images after content is loaded
+                        setTimeout(function() {
+                            if (typeof setupImageLightbox === 'function') {
+                                setupImageLightbox();
+                            }
+                        }, 100);
                     }
                 });
         }
     }
 });
+
+// Replace hyphen lines with clean line elements (works on all screen sizes)
+function replaceHyphenLines(container) {
+    const paragraphs = Array.from(container.querySelectorAll('p'));
+    paragraphs.forEach(p => {
+        const text = p.textContent.trim();
+        // Check if paragraph contains mostly hyphens (at least 10 hyphens)
+        if (text.match(/^-{10,}$/)) {
+            const lineDiv = document.createElement('div');
+            lineDiv.className = 'divider-line';
+            p.parentNode.replaceChild(lineDiv, p);
+        }
+    });
+}
 
 // Transform all use cases content for mobile - convert bullets to step flows
 function transformUseCaseForMobile(container) {
