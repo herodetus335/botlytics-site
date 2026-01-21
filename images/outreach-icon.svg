@@ -1,0 +1,12 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="outreach-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#064dfa"/>
+      <stop offset="100%" style="stop-color:#29c8ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="10" width="36" height="28" rx="3" stroke="url(#outreach-grad)" stroke-width="2" fill="none"/>
+  <path d="M6 14L24 26L42 14" stroke="url(#outreach-grad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="38" cy="12" r="6" fill="#29c8ff"/>
+  <path d="M35 12h6M38 9v6" stroke="#0d0d12" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

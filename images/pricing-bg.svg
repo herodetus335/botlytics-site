@@ -1,0 +1,39 @@
+<svg width="1320" height="725" viewBox="0 0 1320 725" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_22373_15167" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1320" height="725">
+<rect width="1319.99" height="725" fill="url(#paint0_radial_22373_15167)"/>
+</mask>
+<g mask="url(#mask0_22373_15167)">
+<line x1="1906.11" y1="199.662" x2="278" y2="199.662" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="1906.11" y1="304.404" x2="278" y2="304.404" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="1906.11" y1="409.146" x2="278" y2="409.146" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="1906.11" y1="513.888" x2="278" y2="513.888" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="1906.11" y1="618.629" x2="278" y2="618.629" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="1906.11" y1="724.457" x2="278" y2="724.457" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="170.002" y1="115" x2="170.002" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="256.835" y1="115" x2="256.835" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="365.376" y1="115" x2="365.376" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="473.917" y1="115" x2="473.917" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="582.458" y1="115" x2="582.458" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="690.999" y1="115" x2="690.999" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="799.54" y1="115" x2="799.54" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="908.081" y1="115" x2="908.081" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="1016.62" y1="115" x2="1016.62" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="1125.16" y1="115" x2="1125.16" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<line x1="1233.7" y1="115" x2="1233.7" y2="760.819" stroke="#66BCC7" stroke-opacity="0.2" stroke-width="1.08541"/>
+<rect x="365.376" y="508.461" width="7.67477" height="7.67477" transform="rotate(45 365.376 508.461)" fill="#66BCC7" fill-opacity="0.3"/>
+<rect x="1016.62" y="610.074" width="10.7723" height="10.7723" transform="rotate(45 1016.62 610.074)" fill="#66BCC7" fill-opacity="0.3"/>
+<rect x="365.376" y="298.977" width="7.67477" height="7.67477" transform="rotate(45 365.376 298.977)" fill="#66BCC7" fill-opacity="0.3"/>
+<rect x="1233.7" y="298.977" width="7.67477" height="7.67477" transform="rotate(45 1233.7 298.977)" fill="#66BCC7" fill-opacity="0.3"/>
+<rect x="473.374" y="403.719" width="7.67477" height="7.67477" transform="rotate(45 473.374 403.719)" fill="#66BCC7" fill-opacity="0.3"/>
+<rect x="1124.62" y="401" width="10.7723" height="10.7723" transform="rotate(45 1124.62 401)" fill="#66BCC7" fill-opacity="0.3"/>
+<rect x="799.617" y="402" width="10.7723" height="10.7723" transform="rotate(45 799.617 402)" fill="#66BCC7" fill-opacity="0.3"/>
+<rect x="582.458" y="194.234" width="7.67477" height="7.67477" transform="rotate(45 582.458 194.234)" fill="#66BCC7" fill-opacity="0.3"/>
+<rect x="1016.62" y="192" width="10.7723" height="10.7723" transform="rotate(45 1016.62 192)" fill="#66BCC7" fill-opacity="0.3"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_22373_15167" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(940.596 595.451) rotate(-127.15) scale(680.703 1185.21)">
+<stop stop-color="#737373" stop-opacity="0.54"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

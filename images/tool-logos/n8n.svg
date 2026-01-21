@@ -1,0 +1,4 @@
+<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="40" rx="6" fill="#16181d" stroke="#666d80" stroke-opacity="0.3"/>
+  <text x="60" y="25" text-anchor="middle" fill="#ffffff" font-family="Clash Display, sans-serif" font-size="16" font-weight="500">n8n</text>
+</svg>

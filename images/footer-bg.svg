@@ -1,0 +1,31 @@
+<svg width="1920" height="606" viewBox="0 0 1920 606" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_22373_13932" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="-15" width="1920" height="1124">
+<rect y="-15" width="1920" height="1124" fill="url(#paint0_radial_22373_13932)"/>
+</mask>
+<g mask="url(#mask0_22373_13932)">
+<line x1="3000" y1="141" y2="141" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="3000" y1="334" y2="334" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="3000" y1="527" y2="527" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="161" y1="-15" x2="161" y2="1175" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="361" y1="-15" x2="361" y2="1175" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="561" y1="-15" x2="561" y2="1175" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="761" y1="-15" x2="761" y2="1175" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="961" y1="-15" x2="961" y2="1175" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="1161" y1="-15" x2="1161" y2="1175" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="1361" y1="-15" x2="1361" y2="1175" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="1561" y1="-15" x2="1561" y2="1175" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<line x1="1761" y1="-15" x2="1761" y2="1175" stroke="#064DFA" stroke-opacity="0.1" stroke-width="2"/>
+<rect x="161" y="324" width="14.1417" height="14.1417" transform="rotate(45 161 324)" fill="#064DFA" fill-opacity="0.2"/>
+<rect x="1761" y="324" width="14.1417" height="14.1417" transform="rotate(45 1761 324)" fill="#064DFA" fill-opacity="0.2"/>
+<rect x="360" y="517" width="14.1417" height="14.1417" transform="rotate(45 360 517)" fill="#064DFA" fill-opacity="0.2"/>
+<rect x="1561" y="517" width="14.1417" height="14.1417" transform="rotate(45 1561 517)" fill="#064DFA" fill-opacity="0.2"/>
+<rect x="561" y="131" width="14.1417" height="14.1417" transform="rotate(45 561 131)" fill="#064DFA" fill-opacity="0.2"/>
+<rect x="1361" y="131" width="14.1417" height="14.1417" transform="rotate(45 1361 131)" fill="#064DFA" fill-opacity="0.2"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_22373_13932" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 741) rotate(-90) scale(639 1091.53)">
+<stop stop-color="#D9D9D9" stop-opacity="0"/>
+<stop offset="1" stop-color="#737373" stop-opacity="0.54"/>
+</radialGradient>
+</defs>
+</svg>

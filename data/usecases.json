@@ -1,0 +1,70 @@
+[
+  {
+    "Name": "Strategic Outreach Engine",
+    "Slug": "strategic-outreach",
+    "BlueprintPage": "blueprint-outreach.html",
+    "Primary Thumbnail": "images/mockups/outreach-mockup.svg",
+    "Main Image": "images/mockups/outreach-hero.svg",
+    "Tagline": "Cold outreach that converts at scale",
+    "Excerpt": "10-step cold email system with precision targeting, AI personalization, and intelligent reply detection. Average 5% reply rates.",
+    "Description": "From ICP identification to closed meeting. Our Strategic Outreach Engine handles mailbox setup, segmentation, Clay enrichment (waterfall), ironclad copy with A/Z testing and spintax, Instantly.ai delivery, and Slack/Airtable routing.",
+    "Highlights": [
+      "1M+ cold emails sent",
+      "5% average reply rate",
+      "Batch + commission pricing",
+      "Full tutorial handover included"
+    ],
+    "Category": "outreach"
+  },
+  {
+    "Name": "Modular Revenue Infrastructure",
+    "Slug": "revenue-infrastructure",
+    "BlueprintPage": "blueprint-infrastructure.html",
+    "Primary Thumbnail": "images/mockups/infrastructure-mockup.svg",
+    "Main Image": "images/mockups/infrastructure-hero.svg",
+    "Tagline": "End-to-end revenue automation in 3 phases",
+    "Excerpt": "Complete pipeline automation from lead capture to client success. CRM sync, AI proposals, instant provisioning.",
+    "Description": "Three modular phases that scale with you. Phase 1 (Conversion): Intake to CRM to Slack to booking reminders. Phase 2 (Sales Ops): Call transcription, auto-proposals, invoicing, alerts. Phase 3 (Success): Payment triggers instant provisioning, Slack channels, Drive folders, kickoff emails.",
+    "Highlights": [
+      "3-phase modular system",
+      "AI transcription & proposals",
+      "Instant client provisioning",
+      "Real-time team notifications"
+    ],
+    "Category": "infrastructure"
+  },
+  {
+    "Name": "High-Performance Web Design",
+    "Slug": "web-design",
+    "BlueprintPage": "blueprint-webdesign.html",
+    "Primary Thumbnail": "images/mockups/webdesign-mockup.svg",
+    "Main Image": "images/mockups/webdesign-hero.svg",
+    "Tagline": "Websites that drive results",
+    "Excerpt": "React and Node.js sites with clean animations, API integrations, and conversion-focused design. Voice embeds optional.",
+    "Description": "High-performance websites built for conversion. React frontends, Node.js backends, clean animations, API integrations, and optional voice AI embeds. Portfolio: Botlytics, Personal Training Brand, Children's Camp, MyHairSalon (Voice Agency).",
+    "Highlights": [
+      "React + Node.js stack",
+      "Clean, sophisticated animations",
+      "API & voice integrations",
+      "4 sites in portfolio"
+    ],
+    "Category": "design"
+  },
+  {
+    "Name": "Content Pal",
+    "Slug": "content-pal",
+    "BlueprintPage": "blueprint-contentpal.html",
+    "Primary Thumbnail": "images/mockups/contentpal-mockup.svg",
+    "Main Image": "images/mockups/contentpal-hero.svg",
+    "Tagline": "Your 24/7 autonomous content engine",
+    "Excerpt": "AI-powered digital newsroom that detects trends, generates media, and auto-publishes to TikTok, Reels, and Shorts.",
+    "Description": "Content Pal runs around the clock. Trend detection identifies what's hot. AI generates video and image content. Human review queue ensures quality. Auto-publishing pushes to TikTok, Instagram Reels, and YouTube Shorts.",
+    "Highlights": [
+      "24/7 trend detection",
+      "AI media generation",
+      "Human review workflow",
+      "Multi-platform publishing"
+    ],
+    "Category": "content"
+  }
+]

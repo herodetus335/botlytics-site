@@ -1,0 +1,14 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="infra-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#064dfa"/>
+      <stop offset="100%" style="stop-color:#29c8ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="12" height="12" rx="2" stroke="url(#infra-grad)" stroke-width="2" fill="none"/>
+  <rect x="30" y="6" width="12" height="12" rx="2" stroke="url(#infra-grad)" stroke-width="2" fill="none"/>
+  <rect x="6" y="30" width="12" height="12" rx="2" stroke="url(#infra-grad)" stroke-width="2" fill="none"/>
+  <rect x="30" y="30" width="12" height="12" rx="2" stroke="url(#infra-grad)" stroke-width="2" fill="none"/>
+  <path d="M18 12h12M12 18v12M36 18v12M18 36h12" stroke="url(#infra-grad)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="4" fill="#29c8ff"/>
+</svg>
